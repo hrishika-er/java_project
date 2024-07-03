@@ -1,0 +1,35 @@
+Task 2: Palindrome Checker
+objectve: Implement a program that checks
+whether a given word or phrase is a palindrome. A
+palindrome is a word or phrase that reads the
+same forwards and backward, ignoring spaces and
+punctuation.
+Skills: String manipulation, loops, conditional
+statements.
+
+public class abc {
+    public static void main(String[] args) {
+        // Initialize the original string
+        String s = "life has got all twists and turns";
+        
+        // Initialize the reversed string to be empty
+        String rev = "";
+        
+        // Loop from the end of the string to the beginning
+        for (int i = s.length() - 1; i >= 0; i--) {
+            // Append each character to the reversed string
+            rev = rev + s.charAt(i);
+        }
+        
+        // Check if the original string is equal to the reversed string
+        if (s.equals(rev)) {
+            // If they are equal, print that it's a palindrome
+            System.out.println("palindrome String");
+        } else {
+            // If they are not equal, print that it's not a palindrome
+            System.out.println("not a palindrome String");
+        }
+    }
+}
+String Reversal: The program constructs a reversed version of the string by appending characters from the end of the original string to a new string (rev).
+Palindrome Check: A string is a palindrome if it reads the same forwards and backwards. The program checks this by comparing the original string with its reversed version.
