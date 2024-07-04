@@ -1,0 +1,94 @@
+Task 3 - Student Gradecalculator
+import java.util.Scanner;
+
+public class Gradecalculator {
+    private static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        // Prompt user to enter the number of grades
+        System.out.print("Enter the number of grades: ");
+        int numGrades = scanner.nextInt();
+        // Array to store the grades
+        int[] grades = new int[numGrades];
+
+        // Prompt user to enter each grade
+        for (int i = 0; i < numGrades; i++) {
+            System.out.printf("Enter grade #%d: ", i + 1);
+            grades[i] = scanner.nextInt();
+        }
+
+        // Calculate the sum of grades
+        int sum = calculateSum(grades);
+
+        // Calculate the average
+        double average = calculateAverage(sum, numGrades);
+
+        // Display the average grade
+        System.out.printf("Average grade: %.2f\n", average);
+
+        // Close the scanner
+        close();
+    }
+
+    // Method to calculate sum of grades
+    private static int calculateSum(int[] grades) {
+        int sum = 0;
+        for (int grade : grades) {
+            sum += grade;
+        }
+        return sum;
+    }
+
+    // Method to calculate average of grades
+    private static double calculateAverage(int sum, int numGrades) {
+        return (double) sum / numGrades;
+    }
+
+    // Method to close resources (e.g., scanner)
+    private static void close() {
+        scanner.close();
+    }
+}
+The output of the GradeCalculator program depends on the input provided by the user. Here's a step-by-step explanation of what the program does and how the output is determined:
+
+### Program Explanation:
+
+1. *Input Prompt*: The program first prompts the user to enter the number of grades.
+
+2. *Grade Entry*: It then asks the user to enter each grade sequentially based on the number provided.
+
+3. *Sum Calculation*: After collecting all grades, the program calculates the sum of these grades.
+
+4. *Average Calculation*: Using the sum calculated, the program then computes the average grade by dividing the sum by the number of grades.
+
+5. *Output*: Finally, it displays the average grade formatted to two decimal places.
+
+### Example Run:
+
+Let's simulate an example run of the program:
+
+- *User Input*: Suppose the user enters 4 when prompted for the number of grades.
+  
+- *Grade Entry*: Then, the user enters the grades 75, 80, 85, and 90 respectively.
+
+- *Calculation*:
+  - Sum of grades = 75 + 80 + 85 + 90 = 330
+  - Average grade = 330 / 4 = 82.5
+
+- *Output*: The program would then output:
+  
+  Enter the number of grades: 4
+  Enter grade #1: 75
+  Enter grade #2: 80
+  Enter grade #3: 85
+  Enter grade #4: 90
+  Average grade: 82.50
+  
+
+### Interpretation:
+
+- The program accurately collects and calculates the average of the entered grades.
+- The output format %.2f ensures that the average grade is displayed with two decimal places, adhering to typical grading conventions.
+- Each step of the program, from input collection to output display, is straightforward and provides clear feedback to the user.
+
+Therefore, the specific output of the program depends on the grades entered by the user. The example provided assumes grades 75, 80, 85, and 90, resulting in an average grade of 82.50. If different grades are entered, the output will reflect those inputs accordingly.
